@@ -65,9 +65,14 @@ Rysunek 1. Wygląd aplikacji.
 
 Każda z przeglądarek ma identyczną mechanikę to znaczy, że punkty i oś są interaktywne, można je przemieszczać po dodaniu oraz usuwać poprzez wybranie opcji "Usuń" przy pomocy PPM.
 
-## Adnotacje techniczne:
+## Szczegóły techniczne:
 
 Aplikacja napisana jest w języku C++ przy użyciu biblioteki Qt.
+
+Ustawianie folderu roboczego:
+- ścieżka do folderu roboczego znajduje się w ukrytym pliku o nazwie ".workspace" katalogu z plikiem tekstowym
+- jeśli podany plik nie istnieje, jest tworzony przy starcie aplikacji, domyślna ścieżka wskazuje na bieżący katalog
+- zmiana folderu roboczego odbywa się wyłącznie poprzez wywołanie opcji "Wybierz folder roboczy" w menu głównym
 
 
 ## Otwarte punkty:
@@ -86,3 +91,8 @@ Wyświetlenie pomocy, krótkiej notki o programie oraz zamknięcie aplikacji.
 2.Aktywne opcje menu przeglądarek oraz menu wpisu.
 
 
+
+
+##Do zrobienia:
+
+ - walidacja ścieżki worskspace, wczytanej z pliku

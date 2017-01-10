@@ -188,8 +188,11 @@
     <property name="title">
      <string>Menu</string>
     </property>
+    <addaction name="actionDodaj_pacjenta"/>
+    <addaction name="actionUsu_pacjenta"/>
+    <addaction name="actionWybierz_folder_roboczy"/>
+    <addaction name="actionPomoc"/>
     <addaction name="actionO_programie"/>
-    <addaction name="actionZamknij"/>
    </widget>
    <addaction name="menuMenu"/>
   </widget>
@@ -210,6 +213,26 @@
   <action name="actionZamknij">
    <property name="text">
     <string>Zamknij</string>
+   </property>
+  </action>
+  <action name="actionDodaj_pacjenta">
+   <property name="text">
+    <string>Dodaj pacjenta</string>
+   </property>
+  </action>
+  <action name="actionUsu_pacjenta">
+   <property name="text">
+    <string>Usuń pacjenta</string>
+   </property>
+  </action>
+  <action name="actionWybierz_folder_roboczy">
+   <property name="text">
+    <string>Wybierz folder roboczy</string>
+   </property>
+  </action>
+  <action name="actionPomoc">
+   <property name="text">
+    <string>Pomoc</string>
    </property>
   </action>
  </widget>
