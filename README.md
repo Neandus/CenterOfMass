@@ -73,6 +73,8 @@ Ustawianie folderu roboczego:
 - ścieżka do folderu roboczego znajduje się w ukrytym pliku o nazwie ".workspace" katalogu z plikiem tekstowym
 - jeśli podany plik nie istnieje, jest tworzony przy starcie aplikacji, domyślna ścieżka wskazuje na bieżący katalog
 - zmiana folderu roboczego odbywa się wyłącznie poprzez wywołanie opcji "Wybierz folder roboczy" w menu głównym
+- wybór nowego folderu zostaje zapisany w pliku ".workspace"
+
 
 
 ## Otwarte punkty:

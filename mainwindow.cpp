@@ -1,19 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QtCore/QFile>
-#include <QMessageBox>
-#include <QDebug>
-#include <QTextStream>
 
-
-const char * workspace_path = ".workspace";
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    mFileSystemModel(new QFileSystemModel),
-    mWorkspacePath(QDir::currentPath())
-
+    mWorkspace(new Workspace(parent))
 {
     ui->setupUi(this);
     createActions();
@@ -22,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    delete mFileSystemModel;
+    delete mWorkspace;
     delete ui;
 }
 
@@ -41,46 +33,10 @@ void MainWindow::createActions()
     connect(ui->actionO_programie, &QAction::triggered, this, &MainWindow::oProgramie);
 }
 
-void MainWindow::readWorkspacePath()
-{
-    QFile workspaceFile(workspace_path);
-
-    if(!workspaceFile.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        QMessageBox::information(0, "Warning", "Workspace file has not been found! Workspace set to defualt path.");
-
-        //create file with default path
-        QFile defaultFile(workspace_path);
-        if(!defaultFile.open(QIODevice::ReadWrite | QIODevice::Text))
-        {
-            QMessageBox::warning(0, "Error", "Workspace file couldn't be created!");
-        }
-        else
-        {
-            QTextStream out(&defaultFile);
-            out << mWorkspacePath << endl;
-        }
-        defaultFile.close();
-    }
-    else
-    {
-        //read workspace path
-        QTextStream in(&workspaceFile);
-        if(!in.atEnd()) {
-            QString line = in.readLine();
-            //TODO validate path
-            mWorkspacePath = line;
-        }
-    }
-    workspaceFile.close();
-}
-
 void MainWindow::displayWorkspace()
 {
-    readWorkspacePath();
-    mFileSystemModel->setRootPath(mWorkspacePath);
-    ui->treeView->setModel(mFileSystemModel);
-    ui->treeView->setRootIndex(mFileSystemModel->index(mWorkspacePath));
+    ui->treeView->setModel(&mWorkspace->mFileSystemModel);
+    ui->treeView->setRootIndex(mWorkspace->getModelIndex());
 }
 
 
@@ -90,8 +46,8 @@ void MainWindow::usunPacjenta()
 {}
 void MainWindow::wybierzFolderRoboczy()
 {
-
-
+    mWorkspace->update();
+    displayWorkspace();
 }
 void MainWindow::Pomoc()
 {}

@@ -2,8 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QFileSystemModel>
-#include <memory>
+#include "workspace.h"
 
 namespace Ui {
 class MainWindow;
@@ -19,13 +18,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QFileSystemModel * mFileSystemModel;
-    QString mWorkspacePath;
+    Workspace *mWorkspace;
 
     void createActions();
     void displayWorkspace();
-
-    void readWorkspacePath();
 
     void dodajPacjenta();
     void usunPacjenta();
