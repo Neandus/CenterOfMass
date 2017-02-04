@@ -8,9 +8,9 @@ const char * Workspace::cWorkspaceFileName = ".workspace";
 Workspace::Workspace(QWidget *parent)
   : QWidget(parent)
   , mFileSystemModel()
-  , mWorkspacePath(QDir::currentPath())
+  , mWorkspacePath()
 {
-    update(mWorkspacePath);
+    readFromFile();
 }
 
 
