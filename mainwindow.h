@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QGraphicsScene>
 #include "workspace.h"
 
 namespace Ui {
@@ -20,6 +21,9 @@ private:
     Ui::MainWindow *ui;
     Workspace *mWorkspace;
 
+    QGraphicsScene * mSceneLeft;
+    QGraphicsScene * mSceneRight;
+
     void createActions();
     void displayWorkspace();
 
@@ -28,6 +32,7 @@ private:
     void wybierzFolderRoboczy();
     void Pomoc();
     void oProgramie();
+
 };
 
 #endif // MAINWINDOW_H

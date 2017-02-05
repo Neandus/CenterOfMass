@@ -75,6 +75,30 @@ Ustawianie folderu roboczego:
 - zmiana folderu roboczego odbywa się wyłącznie poprzez wywołanie opcji "Wybierz folder roboczy" w menu głównym
 - wybór nowego folderu zostaje zapisany w pliku ".workspace"
 
+Dodawanie pacjenta:
+- wymagane dane: imie, nazwisko, adres i pesel
+- tworzony jest nowy folder z imieniem i nazwiskiem, a plik z danymi(ukryty) .data utworzony zostaje w srodku folderu
+
+
+Menu przeglądarek:
+
+Dodać pop-up menu dla PPM w przeglądarce?
+
+1. Załaduj zdjęcie - ładuje nowe zdjęcie do przeglądarki.
+    - Opcja w menu głównym "Załaduj zdjęcie".
+    - Otwarcie wyszukiwarki plików, począwszy od folderu roboczego.
+    - Czyszczenie sceny.
+    - Plik załadowany do sceny.
+    - Scena ładowana do przeglądarki.
+
+2. Zapisz zdjęcie
+
+3. Wyczyść zdjęcie - czyści zdjęcie z linii i punktów.
+
+4. Dodaj oś
+
+5. Dodaj punkt
+
 
 
 ## Otwarte punkty:
@@ -90,7 +114,8 @@ Wszystkie opcje menu głównego aktywne.
 Możliwe jest dodawanie i usuwanie wpisów z pacjentami oraz wybór folderu roboczego.
 Wyświetlenie pomocy, krótkiej notki o programie oraz zamknięcie aplikacji.
 
-2.Aktywne opcje menu przeglądarek oraz menu wpisu.
+2. Aktywne wszystkie opcje menu przeglądarek.
+
 
 
 

@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    workspace.cpp
+    workspace.cpp \
+    mygraphicviewer.cpp
 
 HEADERS  += mainwindow.h \
-    workspace.h
+    workspace.h \
+    mygraphicviewer.h
 
 FORMS    += mainwindow.ui
 

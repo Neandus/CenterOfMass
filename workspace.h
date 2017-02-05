@@ -22,6 +22,11 @@ public:
         return mFileSystemModel.index(mWorkspacePath);
     }
 
+    QString getWorkspacePath() const
+    {
+        return mWorkspacePath;
+    }
+
     QFileSystemModel mFileSystemModel;
 
 private:
