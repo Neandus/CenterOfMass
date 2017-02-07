@@ -82,42 +82,29 @@ Dodawanie pacjenta:
 
 Menu przeglądarek:
 
-Dodać pop-up menu dla PPM w przeglądarce?
+Zdjęcie załadowane do przeglądarki jest dla niej tłem/bazą.
+Kolejne elementy, czyli oś i punkty, są opcjonalne.
+Mogą być dodawane poprzez opcje "Dodaj oś" oraz "Dodaj punkt",
+ale mogą być również usunięte poprzez opcję "Wyczyść zdjęcie".
+Po wywołaniu opcji "Zapisz zdjęcie", wszystkie elementy zostają
+zapisane wraz ze zdjęciem w folderze "aktywnego" pacjenta.
+
 
 1. Załaduj zdjęcie - ładuje nowe zdjęcie do przeglądarki.
-    - Opcja w menu głównym "Załaduj zdjęcie".
     - Otwarcie wyszukiwarki plików, począwszy od folderu roboczego.
     - Czyszczenie sceny.
     - Plik załadowany do sceny.
     - Scena ładowana do przeglądarki.
 
 2. Zapisz zdjęcie
+    - Przekonwertowanie obecnej sceny do obrazu
+    - Zapis obrazu w folderze pacjenta
 
-3. Wyczyść zdjęcie - czyści zdjęcie z linii i punktów.
+3. Wyczyść zdjęcie - czyści zdjęcie z osi i punktów.
 
-4. Dodaj oś
+4. Dodaj oś - pozwala na dodanie osi na zdjęciu poprzez naciśnięcie LPM w przeglądarce.
 
-5. Dodaj punkt
-
-
-
-## Otwarte punkty:
-
- - Stosowanie obrazu z wieloma warstawmi lub osobny plik z dodatkowymi informacjami.
-
-
-
-## Kolejne fazy aplikacji:
-
-1. Aplikacja okienkowa ze wszystkimi widgetami na miejscu - patrz Rysunek 1.
-Wszystkie opcje menu głównego aktywne.
-Możliwe jest dodawanie i usuwanie wpisów z pacjentami oraz wybór folderu roboczego.
-Wyświetlenie pomocy, krótkiej notki o programie oraz zamknięcie aplikacji.
-
-2. Aktywne wszystkie opcje menu przeglądarek.
-
-
-
+5. Dodaj punkt - pozwala na dodanie punktu na zdjęciu poprzez naciśnięcie LPM w przeglądarce.
 
 
 ##Do zrobienia:
