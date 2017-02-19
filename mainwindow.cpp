@@ -62,6 +62,17 @@ void MainWindow::createActions()
     connect(ui->add_axis_right, &QPushButton::clicked, ui->graphicsView_right, &MyGraphicViewer::addAxis);
     connect(ui->add_point_right, &QPushButton::clicked, ui->graphicsView_right, &MyGraphicViewer::addPoint);
 
+    ui->load_image_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/folder.svg"));
+    ui->save_image_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/data-transfer-download.svg"));
+    ui->clean_image_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/trash.svg"));
+    ui->add_axis_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/arrow-top.svg"));
+    ui->add_point_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/target.svg"));
+
+    ui->load_image_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/folder.svg"));
+    ui->save_image_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/data-transfer-download.svg"));
+    ui->clean_image_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/trash.svg"));
+    ui->add_axis_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/arrow-top.svg"));
+    ui->add_point_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/target.svg"));
 }
 
 void MainWindow::displayWorkspace()

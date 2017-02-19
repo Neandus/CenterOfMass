@@ -56,6 +56,7 @@ Menu przeglądarek zawiera opcje:
 -Wyczyść zdjęcie
 -Dodaj oś
 -Dodaj punkt pomocniczy
+-Ustaw kolor i rozmiar linii
 
 Przeglądarki obrazów są umiejscowione wertykalnie względem siebie oraz przeglądarki plików.
 Poniższy obraz, przedstawia pierwszą wersję programu:
@@ -106,6 +107,7 @@ zapisane wraz ze zdjęciem w folderze "aktywnego" pacjenta.
 
 5. Dodaj punkt - pozwala na dodanie punktu na zdjęciu poprzez naciśnięcie LPM w przeglądarce.
 
+6. Ustaw kolor i rozmiar linii -
 
 ##Do zrobienia:
 
