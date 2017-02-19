@@ -22,6 +22,11 @@ public:
         return mFileSystemModel.index(mWorkspacePath);
     }
 
+    int getColumnCount() const
+    {
+        return mFileSystemModel.columnCount();
+    }
+
     QString getWorkspacePath() const
     {
         return mWorkspacePath;

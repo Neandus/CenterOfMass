@@ -81,6 +81,10 @@ void MainWindow::displayWorkspace()
     ui->graphicsView_right->setWorkspacePath(mWorkspace->getWorkspacePath());
     ui->treeView->setModel(&mWorkspace->mFileSystemModel);
     ui->treeView->setRootIndex(mWorkspace->getModelIndex());
+    for(int i = 1; i < mWorkspace->getColumnCount(); ++i)
+    {
+        ui->treeView->hideColumn(i);
+    }
 }
 
 void MainWindow::dodajPacjenta()
