@@ -24,4 +24,12 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 DISTFILES += \
-    README.md
+    README.md \
+    resources/arrow-top.svg \
+    resources/brush.svg \
+    resources/data-transfer-download.svg \
+    resources/folder.svg \
+    resources/pencil.svg \
+    resources/sun.svg \
+    resources/target.svg \
+    resources/trash.svg

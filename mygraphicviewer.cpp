@@ -79,6 +79,11 @@ void MyGraphicViewer::addPoint()
     mSetPoint = true;
 }
 
+void MyGraphicViewer::changeBrush()
+{
+    //TODO: Implement something here
+}
+
 void MyGraphicViewer::mousePressEvent(QMouseEvent *event)
 {
     if(mSetAxis)

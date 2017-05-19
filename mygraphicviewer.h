@@ -24,6 +24,7 @@ public slots:
     void cleanImage();
     void addAxis();
     void addPoint();
+    void changeBrush();
 
 protected:
     virtual void mousePressEvent(QMouseEvent *event) override;
