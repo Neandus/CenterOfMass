@@ -1,8 +1,12 @@
 #include "mygraphicviewer.h"
+#include "pendialog.h"
 #include <QFileDialog>
 #include <QPixmap>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QDebug>
+#include <QColorDialog>
+#include <QInputDialog>
 
 constexpr qreal point_size = 4;
 
@@ -12,6 +16,7 @@ MyGraphicViewer::MyGraphicViewer(QWidget *parent)
     mScene(new QGraphicsScene)
 {
     setScene(mScene);
+    mPen = std::make_unique<QPen>();
 }
 
 MyGraphicViewer::~MyGraphicViewer()
@@ -81,7 +86,9 @@ void MyGraphicViewer::addPoint()
 
 void MyGraphicViewer::changeBrush()
 {
-    //TODO: Implement something here
+    auto newPen = ::PenDialog::getPen(this);
+    mPen->setColor(newPen.first);
+    mPen->setWidth(newPen.second);
 }
 
 void MyGraphicViewer::mousePressEvent(QMouseEvent *event)
@@ -91,14 +98,15 @@ void MyGraphicViewer::mousePressEvent(QMouseEvent *event)
         if(mAxis == nullptr)
         {
             mAxis = mScene->addLine(event->pos().x(), 0,
-                                    event->pos().x(), mScene->height());
+                                    event->pos().x(), mScene->height(),
+                                    *mPen);
         }
     }
     else if(mSetPoint)
     {
         mPoints.push_back(mScene->addEllipse(event->pos().x() - (point_size/2),
                                              event->pos().y() - (point_size/2),
-                                             point_size, point_size));
+                                             point_size, point_size, *mPen));
     }
     else
     {

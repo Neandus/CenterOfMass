@@ -107,7 +107,7 @@ zapisane wraz ze zdjęciem w folderze "aktywnego" pacjenta.
 
 5. Dodaj punkt - pozwala na dodanie punktu na zdjęciu poprzez naciśnięcie LPM w przeglądarce.
 
-6. Ustaw kolor i rozmiar linii -
+6. Ustaw kolor i rozmiar linii - pozwala na ustawienie koloru i rozmiaru lini, używanej do wstawienia punku i osi.
 
 ##Do zrobienia:
 
