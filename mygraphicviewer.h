@@ -6,6 +6,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsItem>
 #include <atomic>
+#include <memory>
 
 class MyGraphicViewer : public QGraphicsView
 {
@@ -24,6 +25,7 @@ public slots:
     void cleanImage();
     void addAxis();
     void addPoint();
+    void changeBrush();
 
 protected:
     virtual void mousePressEvent(QMouseEvent *event) override;
@@ -32,6 +34,7 @@ private:
     QGraphicsScene *mScene;
     QGraphicsLineItem *mAxis{nullptr};
     std::vector<QGraphicsEllipseItem*> mPoints;
+    std::unique_ptr<QPen> mPen;
 
     std::atomic_bool mSetAxis{false};
     std::atomic_bool mSetPoint{false};

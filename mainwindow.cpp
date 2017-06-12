@@ -43,36 +43,42 @@ void MainWindow::createActions()
     ui->clean_image_left->setStatusTip(tr("Wyczyść zdjęcie"));
     ui->add_axis_left->setStatusTip(tr("Dodaj oś"));
     ui->add_point_left->setStatusTip(tr("Dodaj punkt"));
+    ui->change_brush_left->setStatusTip(tr("Zmień pędzel"));
 
     ui->load_image_right->setStatusTip(tr("Załaduj zdjęcie"));
     ui->save_image_right->setStatusTip(tr("Zapisz zdjęcie"));
     ui->clean_image_right->setStatusTip(tr("Wyczyść zdjęcie"));
     ui->add_axis_right->setStatusTip(tr("Dodaj oś"));
     ui->add_point_right->setStatusTip(tr("Dodaj punkt"));
+    ui->change_brush_right->setStatusTip(tr("Zmień pędzel"));
 
     connect(ui->load_image_left, &QPushButton::clicked, ui->graphicsView_left, &MyGraphicViewer::loadImage);
     connect(ui->save_image_left, &QPushButton::clicked, ui->graphicsView_left, &MyGraphicViewer::saveImage);
     connect(ui->clean_image_left, &QPushButton::clicked, ui->graphicsView_left, &MyGraphicViewer::cleanImage);
     connect(ui->add_axis_left, &QPushButton::clicked, ui->graphicsView_left, &MyGraphicViewer::addAxis);
     connect(ui->add_point_left, &QPushButton::clicked, ui->graphicsView_left, &MyGraphicViewer::addPoint);
+    connect(ui->change_brush_left, &QPushButton::clicked, ui->graphicsView_left, &MyGraphicViewer::changeBrush);
 
     connect(ui->load_image_right, &QPushButton::clicked, ui->graphicsView_right, &MyGraphicViewer::loadImage);
     connect(ui->save_image_right, &QPushButton::clicked, ui->graphicsView_right, &MyGraphicViewer::saveImage);
     connect(ui->clean_image_right, &QPushButton::clicked, ui->graphicsView_right, &MyGraphicViewer::cleanImage);
     connect(ui->add_axis_right, &QPushButton::clicked, ui->graphicsView_right, &MyGraphicViewer::addAxis);
     connect(ui->add_point_right, &QPushButton::clicked, ui->graphicsView_right, &MyGraphicViewer::addPoint);
+    connect(ui->change_brush_right, &QPushButton::clicked, ui->graphicsView_right, &MyGraphicViewer::changeBrush);
 
     ui->load_image_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/folder.svg"));
     ui->save_image_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/data-transfer-download.svg"));
     ui->clean_image_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/trash.svg"));
     ui->add_axis_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/arrow-top.svg"));
     ui->add_point_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/target.svg"));
+    ui->change_brush_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/sun.svg"));
 
     ui->load_image_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/folder.svg"));
     ui->save_image_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/data-transfer-download.svg"));
     ui->clean_image_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/trash.svg"));
     ui->add_axis_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/arrow-top.svg"));
     ui->add_point_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/target.svg"));
+    ui->change_brush_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/sun.svg"));
 }
 
 void MainWindow::displayWorkspace()
