@@ -17,12 +17,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     workspace.cpp \
     mygraphicviewer.cpp \
-    pendialog.cpp
+    pendialog.cpp \
+    myscene.cpp
 
 HEADERS  += mainwindow.h \
     workspace.h \
     mygraphicviewer.h \
-    pendialog.h
+    pendialog.h \
+    myscene.h
 
 FORMS    += mainwindow.ui \
     pendialog.ui

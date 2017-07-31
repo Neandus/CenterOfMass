@@ -13,7 +13,7 @@ class PenDialog : public QDialog
 
 public:
 
-    static std::pair<QColor, int> getPen(QWidget *parent);
+    static std::pair<QColor, int> getPen(QWidget *parent, int oldVal, QColor oldColor);
 
 private:
 

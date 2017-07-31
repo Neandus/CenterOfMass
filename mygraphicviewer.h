@@ -3,10 +3,9 @@
 
 #include <QWidget>
 #include <QGraphicsView>
-#include <QGraphicsScene>
 #include <QGraphicsItem>
-#include <atomic>
-#include <memory>
+#include "myscene.h"
+
 
 class MyGraphicViewer : public QGraphicsView
 {
@@ -23,21 +22,14 @@ public slots:
     void loadImage();
     void saveImage();
     void cleanImage();
+    void changeBrush();
     void addAxis();
     void addPoint();
-    void changeBrush();
 
-protected:
-    virtual void mousePressEvent(QMouseEvent *event) override;
 private:
     QString mWorksapcePath;
-    QGraphicsScene *mScene;
-    QGraphicsLineItem *mAxis{nullptr};
-    std::vector<QGraphicsEllipseItem*> mPoints;
-    std::unique_ptr<QPen> mPen;
+    MyScene *mScene;
 
-    std::atomic_bool mSetAxis{false};
-    std::atomic_bool mSetPoint{false};
 };
 
 #endif // MYGRAPHICVIEWER_H
