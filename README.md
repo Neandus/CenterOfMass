@@ -83,7 +83,8 @@ Dodawanie pacjenta:
 
 Menu przeglądarek:
 
-Zdjęcie załadowane do przeglądarki jest dla niej tłem/bazą.
+Zdjęcie załadowane do przeglądarki jest dla niej tłem/bazą,
+dopasowuje się do rozmiaru przeglądarki.
 Kolejne elementy, czyli oś i punkty, są opcjonalne.
 Mogą być dodawane poprzez opcje "Dodaj oś" oraz "Dodaj punkt",
 ale mogą być również usunięte poprzez opcję "Wyczyść zdjęcie".
@@ -95,6 +96,7 @@ zapisane wraz ze zdjęciem w folderze "aktywnego" pacjenta.
     - Otwarcie wyszukiwarki plików, począwszy od folderu roboczego.
     - Czyszczenie sceny.
     - Plik załadowany do sceny.
+    - Scena dopasowana do wielkości przeglądarki.
     - Scena ładowana do przeglądarki.
 
 2. Zapisz zdjęcie
@@ -112,3 +114,4 @@ zapisane wraz ze zdjęciem w folderze "aktywnego" pacjenta.
 ##Do zrobienia:
 
  - walidacja ścieżki worskspace, wczytanej z pliku
+ - pomiar kątów pomiędzy osią a położeniem myszki

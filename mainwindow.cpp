@@ -1,13 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDir>
 
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     mWorkspace(new Workspace(parent)),
-    mSceneLeft(new QGraphicsScene),
-    mSceneRight(new QGraphicsScene)
+    mSceneLeft(new MyScene),
+    mSceneRight(new MyScene)
 {
     ui->setupUi(this);
     createActions();
@@ -66,19 +67,19 @@ void MainWindow::createActions()
     connect(ui->add_point_right, &QPushButton::clicked, ui->graphicsView_right, &MyGraphicViewer::addPoint);
     connect(ui->change_brush_right, &QPushButton::clicked, ui->graphicsView_right, &MyGraphicViewer::changeBrush);
 
-    ui->load_image_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/folder.svg"));
-    ui->save_image_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/data-transfer-download.svg"));
-    ui->clean_image_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/trash.svg"));
-    ui->add_axis_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/arrow-top.svg"));
-    ui->add_point_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/target.svg"));
-    ui->change_brush_left->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/sun.svg"));
+    ui->load_image_left->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/folder.svg"));
+    ui->save_image_left->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/data-transfer-download.svg"));
+    ui->clean_image_left->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/trash.svg"));
+    ui->add_axis_left->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/arrow-top.svg"));
+    ui->add_point_left->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/target.svg"));
+    ui->change_brush_left->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/sun.svg"));
 
-    ui->load_image_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/folder.svg"));
-    ui->save_image_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/data-transfer-download.svg"));
-    ui->clean_image_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/trash.svg"));
-    ui->add_axis_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/arrow-top.svg"));
-    ui->add_point_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/target.svg"));
-    ui->change_brush_right->setIcon(QIcon("/home/mszadkox/git/CenterOfMass/resources/sun.svg"));
+    ui->load_image_right->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/folder.svg"));
+    ui->save_image_right->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/data-transfer-download.svg"));
+    ui->clean_image_right->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/trash.svg"));
+    ui->add_axis_right->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/arrow-top.svg"));
+    ui->add_point_right->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/target.svg"));
+    ui->change_brush_right->setIcon(QIcon(QDir::homePath() + "/git/CenterOfMass/resources/sun.svg"));
 }
 
 void MainWindow::displayWorkspace()

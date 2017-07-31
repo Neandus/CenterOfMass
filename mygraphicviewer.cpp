@@ -1,22 +1,17 @@
 #include "mygraphicviewer.h"
-#include "pendialog.h"
 #include <QFileDialog>
 #include <QPixmap>
-#include <QMessageBox>
-#include <QMouseEvent>
-#include <QDebug>
-#include <QColorDialog>
-#include <QInputDialog>
-
-constexpr qreal point_size = 4;
+#include <QGraphicsPixmapItem>
+#include "pendialog.h"
 
 MyGraphicViewer::MyGraphicViewer(QWidget *parent)
   : QGraphicsView(parent),
     mWorksapcePath(QDir::currentPath()),
-    mScene(new QGraphicsScene)
+    mScene(new MyScene)
 {
+    setMouseTracking(true);
+    setAttribute(Qt::WA_StaticContents);
     setScene(mScene);
-    mPen = std::make_unique<QPen>();
 }
 
 MyGraphicViewer::~MyGraphicViewer()
@@ -35,9 +30,10 @@ void MyGraphicViewer::loadImage()
                                                     mWorksapcePath,
                                                     tr("Images (*.png *.jpeg *.jpg *.bmp)"));
 
-    QPixmap image(fileName);
+    QPixmap image{fileName};
     mScene->clear();
-    mScene->addPixmap(image);
+    auto pixmap = mScene->addPixmap(image);
+    mScene->setPixmap(pixmap);
     show();
 }
 
@@ -56,63 +52,21 @@ void MyGraphicViewer::saveImage()
 
 void MyGraphicViewer::cleanImage()
 {
-    if(mAxis != nullptr)
-    {
-        delete mAxis;
-        mAxis = nullptr;
-    }
-
-    std::for_each(std::begin(mPoints), std::end(mPoints), [](QGraphicsEllipseItem* & point) {
-            delete point;
-            point = nullptr;
-    });
-
-    if(mPoints.size())
-    {
-        mPoints.clear();
-    }
+    mScene->cleanImage();
 }
 
 void MyGraphicViewer::addAxis()
 {
-    if(mAxis == nullptr)
-        mSetAxis = true;
+    mScene->addAxis();
 }
 
 void MyGraphicViewer::addPoint()
 {
-    mSetPoint = true;
+    mScene->addPoint();
 }
 
 void MyGraphicViewer::changeBrush()
 {
-    auto newPen = ::PenDialog::getPen(this);
-    mPen->setColor(newPen.first);
-    mPen->setWidth(newPen.second);
-}
-
-void MyGraphicViewer::mousePressEvent(QMouseEvent *event)
-{
-    if(mSetAxis)
-    {
-        if(mAxis == nullptr)
-        {
-            mAxis = mScene->addLine(event->pos().x(), 0,
-                                    event->pos().x(), mScene->height(),
-                                    *mPen);
-        }
-    }
-    else if(mSetPoint)
-    {
-        mPoints.push_back(mScene->addEllipse(event->pos().x() - (point_size/2),
-                                             event->pos().y() - (point_size/2),
-                                             point_size, point_size, *mPen));
-    }
-    else
-    {
-        //nothig to do here
-    }
-
-    mSetAxis = false;
-    mSetPoint = false;
+    auto newPen = PenDialog::getPen(this, mScene->mPenWidth, mScene->mPenColor);
+    mScene->changeBrush(newPen);
 }

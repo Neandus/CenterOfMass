@@ -13,9 +13,27 @@ PenDialog::~PenDialog()
     delete ui;
 }
 
-std::pair<QColor, int> PenDialog::getPen(QWidget *parent)
+std::pair<QColor, int> PenDialog::getPen(QWidget *parent, int oldVal, QColor oldColor)
 {
     PenDialog dialog(parent);
+    dialog.ui->spinBox->setValue(oldVal);
+
+    if(oldColor.name() == "#0000ff")//blue
+    {
+        dialog.ui->radioButton_blue->setChecked(true);
+    }
+    else if(oldColor.name() == "#00ff00")//green
+    {
+        dialog.ui->radioButton_green->setChecked(true);
+    }
+    else if(oldColor.name() == "#ff0000")//red
+    {
+        dialog.ui->radioButton_red->setChecked(true);
+    }
+    else
+    {
+        dialog.ui->radioButton_black->setChecked(true);
+    }
     dialog.exec();
 
     int width = dialog.ui->spinBox->value();
@@ -25,7 +43,7 @@ std::pair<QColor, int> PenDialog::getPen(QWidget *parent)
 
 QColor PenDialog::getColor()
 {
-    QColor color{ 255, 255 ,255 };
+    QColor color{ 0, 0, 0 };
 
     if(ui->radioButton_blue->isChecked())
     {
@@ -41,7 +59,7 @@ QColor PenDialog::getColor()
     }
     else
     {
-        color.setRgb(255, 255 ,255);
+        color.setRgb(0, 0, 0);
     }
 
     return color;
